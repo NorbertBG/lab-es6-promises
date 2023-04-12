@@ -113,7 +113,10 @@ const pr6 = obtainInstruction("brusselsSprouts", 6);
 Promise.all ([pr0,pr1,pr2,pr3,pr4,pr5,pr6])
   
   .then(values => {
-    values.forEach(step => document.querySelector(`#${brusselsSprouts}`).innerHTML += `<li>${step}</li>`)
+    values.forEach(step => document.querySelector(`#brusselsSprouts`).innerHTML += `<li>${step}</li>`)
+  })
+  .then(() => {
+    document.querySelector("#brusselsSproutsImg").removeAttribute("hidden")
   })
   .catch(error => console.error(error))
 
